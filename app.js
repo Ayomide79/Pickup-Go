@@ -28,7 +28,12 @@
 
   // Header and footer
   var h = $("#site-header");
-  if (h) h.innerHTML = '<div class="wrap"><a href="index.html" class="logo">Pickup <b>&amp;</b> Go</a><nav><a href="index.html#cars">Cars</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a><a href="#contact">Contact</a></nav></div>';
+  if (h) {
+    h.innerHTML = '<div class="wrap"><a href="index.html" class="logo">Pickup <b>&amp;</b> Go</a><button type="button" class="menu" aria-label="Open menu" aria-expanded="false">&#9776;</button><nav id="nav"><a href="index.html#cars">Cars</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a><a href="#contact">Contact</a></nav></div>';
+    var mb = h.querySelector(".menu");
+    mb.onclick = function () { var o = h.classList.toggle("open"); mb.setAttribute("aria-expanded", o); mb.innerHTML = o ? "&#10005;" : "&#9776;"; };
+    h.querySelectorAll("nav a").forEach(function (a) { a.addEventListener("click", function () { h.classList.remove("open"); mb.innerHTML = "&#9776;"; mb.setAttribute("aria-expanded", "false"); }); });
+  }
   var f = $("#site-footer");
   if (f) {
     var C = window.CONTACT;
