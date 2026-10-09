@@ -29,9 +29,17 @@
   // Header and footer
   var h = $("#site-header");
   if (h) {
-    h.innerHTML = '<div class="wrap"><a href="index.html" class="logo">Pickup <b>&amp;</b> Go</a><button type="button" class="menu" aria-label="Open menu" aria-expanded="false">&#9776;</button><nav id="nav"><a href="index.html#cars">Cars</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a><a href="#contact">Contact</a></nav></div>';
+    h.innerHTML = '<div class="wrap"><a href="index.html" class="logo">Pickup <b>&amp;</b> Go</a><button type="button" class="menu" aria-label="Open menu" aria-expanded="false">&#9776;</button><nav id="nav"><a href="index.html#cars">Cars</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a><a href="#site-footer">Contact</a></nav></div>';
     var mb = h.querySelector(".menu");
     mb.onclick = function () { var o = h.classList.toggle("open"); mb.setAttribute("aria-expanded", o); mb.innerHTML = o ? "&#10005;" : "&#9776;"; };
+    var lastY = window.pageYOffset || 0;
+    window.addEventListener("scroll", function () {
+      var y = window.pageYOffset || 0;
+      if (y < 80) h.classList.remove("hide");
+      else if (y > lastY + 6 && !h.classList.contains("open")) h.classList.add("hide");
+      else if (y < lastY - 6) h.classList.remove("hide");
+      lastY = y;
+    }, { passive: true });
     h.querySelectorAll("nav a").forEach(function (a) { a.addEventListener("click", function () { h.classList.remove("open"); mb.innerHTML = "&#9776;"; mb.setAttribute("aria-expanded", "false"); }); });
   }
   var f = $("#site-footer");
@@ -159,7 +167,11 @@
       var from = el("input", { type: "datetime-local", id: "c-from", value: P.get("from") || "" });
       var until = el("input", { type: "datetime-local", id: "c-until", value: P.get("until") || "" });
       var lab = function (t, inp) { return el("label", { "class": "form", style: "font-weight:600;gap:6px;display:grid" }, [document.createTextNode(t), inp]); };
-      box.appendChild(sec("Your trip", [el("div", { "class": "form" }, [lab("Trip start", from), lab("Trip end", until)])]));
+      var estD = el("div", { "class": "est" });
+      var goD = el("a", { "class": "btn deskgo", href: "#", text: "Continue" });
+      var tripSec = sec("Your trip", [el("div", { "class": "form" }, [lab("Trip start", from), lab("Trip end", until)]), estD, goD]);
+      tripSec.className += " tripsec";
+      box.appendChild(tripSec);
       box.appendChild(sec("Pickup & return location", [el("p", { style: "margin:0", text: car.city }), el("p", { "class": "meta", style: "margin:4px 0 0", text: car.delivery ? "Delivery to you is available on request. The owner confirms details." : "Pickup only. The owner shares the exact address after approval." })]));
       box.appendChild(sec("Cancellation policy", [el("p", { style: "margin:0", text: window.POLICY })]));
       if (car.distance) box.appendChild(sec("Distance included", [el("p", { style: "margin:0", text: car.distance }), car.extra_mile ? el("p", { "class": "meta", style: "margin:4px 0 0", text: car.extra_mile }) : null]));
@@ -219,13 +231,17 @@
       var bar = el("div", { "class": "bbar" }, [priceEl, go]);
       document.body.appendChild(bar); document.body.classList.add("has-mbar");
       var update = function () {
-        var a = new Date(from.value), b = new Date(until.value);
+        var a = new Date(from.value), b = new Date(until.value), bar1, est1, blocked = false;
         var q = new URLSearchParams({ car: car.id }); if (from.value) q.set("from", from.value); if (until.value) q.set("until", until.value);
-        go.href = "booking.html?" + q; go.removeAttribute("aria-disabled");
-        if (!validRange(a, b)) { priceEl.innerHTML = "<b style='font-size:1.15rem'>" + money(car.price_per_day) + "/day</b><div class='meta'>Pick dates for your total</div>"; return; }
-        if (overlaps(car, a, b)) { priceEl.innerHTML = "<b>Not available</b><div class='meta'>Try different dates</div>"; go.setAttribute("aria-disabled", "true"); return; }
-        var n = dayCount(a, b);
-        priceEl.innerHTML = "<b style='font-size:1.15rem'>" + money(car.price_per_day * n) + " total</b><div class='meta'>" + n + (n > 1 ? " days" : " day") + " · " + money(car.price_per_day) + "/day · estimate</div>";
+        if (!validRange(a, b)) { bar1 = "<b style='font-size:1.15rem'>" + money(car.price_per_day) + "/day</b><div class='meta'>Pick dates for your total</div>"; est1 = "Pick your trip start and end to see your total."; }
+        else if (overlaps(car, a, b)) { bar1 = "<b>Not available</b><div class='meta'>Try different dates</div>"; est1 = "<b>Not available</b> for these dates. Try different dates."; blocked = true; }
+        else {
+          var n = dayCount(a, b), d = n + (n > 1 ? " days" : " day");
+          bar1 = "<b style='font-size:1.15rem'>" + money(car.price_per_day * n) + " total</b><div class='meta'>" + d + " · " + money(car.price_per_day) + "/day · estimate</div>";
+          est1 = money(car.price_per_day) + " x " + d + "<br><b>Estimated total " + money(car.price_per_day * n) + "</b>";
+        }
+        priceEl.innerHTML = bar1; estD.innerHTML = est1;
+        [go, goD].forEach(function (g) { g.href = "booking.html?" + q; if (blocked) g.setAttribute("aria-disabled", "true"); else g.removeAttribute("aria-disabled"); });
       };
       from.onchange = until.onchange = update; update();
     }
