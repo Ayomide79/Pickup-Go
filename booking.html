@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0A1F44"><link rel="stylesheet" href="style.css"><title>Request a car | Pickup &amp; Go</title></head><body>
+<header class="site-h" id="site-header"></header>
+<main><section class="pad wrap" style="max-width:760px">
+<a href="index.html#cars">Back to all cars</a>
+<h1 style="font-size:2.1rem;margin-top:12px">Request a car</h1>
+<p>The owner reviews your request and contacts you. No payment is taken on this site.</p>
+<div class="panel"><form class="form" id="booking-form">
+<p hidden><label>Leave empty <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+<div class="err" id="form-error" role="alert" style="display:none"></div>
+<label>Car<select id="car-select" name="car_id" required></select></label>
+<input type="hidden" name="car_name" id="car-name"><input type="hidden" name="estimated_total" id="est-total">
+<div class="row"><label>First name<input name="first_name" required maxlength="60" autocomplete="given-name"></label><label>Last name<input name="last_name" required maxlength="60" autocomplete="family-name"></label></div>
+<div class="row"><label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label><label>Phone<input name="phone" type="tel" required maxlength="30" autocomplete="tel"></label></div>
+<div class="row"><label>Pickup date and time<input name="pickup_time" type="datetime-local" required></label><label>Drop-off date and time<input name="dropoff_time" type="datetime-local" required></label></div>
+<div class="est" id="est"></div>
+<label>Pickup address<input name="pickup_address" required maxlength="200"></label>
+<label>Drop-off address<input name="dropoff_address" required maxlength="200"></label>
+<label id="delivery-row" style="display:flex;gap:10px;align-items:center;font-weight:500"><input type="checkbox" name="delivery_requested" value="yes" style="width:auto"> I would like the car delivered to me (owner confirms availability and any fee)</label>
+<label>Preferred payment method<select name="payment_method" required><option value="" disabled selected>Choose one</option><option>PayPal</option><option>Cash App</option><option>Zelle</option><option>Chime</option></select></label>
+<p class="note">Your choice is only a preference. No payment is processed on this site. The owner confirms payment details with you directly.</p>
+<div class="note"><strong>Driver's license / ID</strong><p style="margin:6px 0 0">The owner will tell you how to verify your ID after approval. Do not send photos of your ID through this form.</p></div>
+<label>Additional notes (optional)<textarea name="notes" rows="3" maxlength="1000"></textarea></label>
+<button class="btn" type="submit" id="send-btn">Send rental request</button></form></div>
+</section></main>
+<footer class="site-f" id="site-footer"></footer><script src="cars.js"></script><script src="app.js"></script></body></html>

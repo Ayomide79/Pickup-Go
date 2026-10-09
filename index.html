@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0A1F44"><link rel="stylesheet" href="style.css"><title>Pickup &amp; Go | Rent the exact car you want</title><meta name="description" content="Browse cars from the owner, pick your dates, and send a rental request to Pickup &amp; Go."></head><body>
+<header class="site-h" id="site-header"></header>
+<main>
+<section class="hero"><div class="wrap"><h1>Rent a car.<br><span>Pickup &amp; Go.</span></h1><p>Pick the exact car you want, choose your dates, and send a request in two minutes.</p>
+<form class="search" id="search-form" role="search">
+<label>Where<input id="q-where" placeholder="City, area, or car type" autocomplete="off"></label>
+<label>From<input id="q-from" type="datetime-local"></label>
+<label>Until<input id="q-until" type="datetime-local"></label>
+<button class="btn" type="submit">Search</button></form></div></section>
+<section class="pad wrap" id="cars"><div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
+<div class="bar"><strong id="count"></strong><label class="meta">Sort <select id="sort"><option value="rec">Recommended</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="top">Top rated</option></select></label></div>
+<div class="grid" id="car-grid"></div></section>
+<section class="pad wrap" id="how"><h2>How it works</h2><div class="steps">
+<div class="panel step"><div class="n">1</div><h3>Pick your car</h3><p class="meta">Browse the cars, check the photos, features and reviews.</p></div>
+<div class="panel step"><div class="n">2</div><h3>Send a request</h3><p class="meta">Choose your dates and tell us where to meet. No payment is taken online.</p></div>
+<div class="panel step"><div class="n">3</div><h3>Get approved and go</h3><p class="meta">The owner replies, confirms payment details and ID check, and you pick up the keys.</p></div></div></section>
+<section class="band pad"><div class="wrap"><h2>Why rent with Pickup &amp; Go</h2><div class="steps">
+<div class="panel"><h3>Owner-direct</h3><p>You deal with the owner, not a call center.</p></div>
+<div class="panel"><h3>Clear pricing</h3><p>See the daily rate and your estimated total before you send a request.</p></div>
+<div class="panel"><h3>Pickup or delivery</h3><p>Choose pickup, or ask for delivery where offered.</p></div>
+<div class="panel"><h3>Fast replies</h3><p>Reach us by email or phone any time.</p></div></div></div></section>
+<section class="pad wrap" id="faq" style="max-width:820px"><h2>Questions</h2>
+<details><summary>Do I pay online?</summary><p>No. Your payment choice (PayPal, Cash App, Zelle or Chime) is only a preference. The owner confirms payment details with you after approval.</p></details>
+<details><summary>What do I need to rent?</summary><p>A valid driver's license. The owner explains how to verify your ID after your request is approved. Never send ID photos by email or through the request form.</p></details>
+<details><summary>How do I know a car is free for my dates?</summary><p>Search with your dates and only available cars appear. The owner still confirms every request.</p></details>
+<details><summary>Can I cancel?</summary><p>Contact the owner as soon as your plans change. See each car page for the cancellation policy.</p></details></section>
+</main>
+<footer class="site-f" id="site-footer"></footer><script src="cars.js"></script><script src="app.js"></script></body></html>
