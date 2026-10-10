@@ -32,10 +32,10 @@ window.CARS = [
     images: ["K1.jpeg","K2.jpeg", "K3.jpeg","K4.jpeg","K5.jpeg","K6.jpeg","K7.jpeg",], delivery: false, active: true, booked: []
   },
   {
-    id: "sport-coupe", name: "Sport Coupe", year: 2021, type: "Luxury", city: "Your City",
-    price_per_day: 140, seats: 4, transmission: "Automatic", fuel: "Gas",
-    features: ["Leather se", "Premium sound", "Sunroof", "Bluetooth"],
-    images: ["car-sport-coupe.svg"], delivery: false, active: true, booked: []
+    id: "fordex", name: "Ford Explorer", year: 2022, type: "SUV", city: "",
+    price_per_day: 40, seats: 6, transmission: "Automatic", fuel: "Gas",
+    features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
+    images: ["F1.jpeg", "F2.jpeg", "F3.jpeg", "F4.jpeg", "F5.jpeg", "F6.jpeg", "F7.jpeg",], delivery: false, active: true, booked: []
   }
 ];
 
@@ -54,6 +54,8 @@ window.REVIEWS = {
             ],
    "kia": [ {name: "Becky B.", date: "Jun 30, 2026", rating: 4.95, text: "Car was in great condition and hosts were super informative! Would rent again."}
           ],
+   "fordex": [ { name: "Racheal G.", date: "Sept 10, 2026", rating: 5, text: "Best ride."}
+             ]
 };
 
 /* Booking requests are emailed to you by Formspree (free). Paste your form link: "https://formspree.io/f/abcd1234" */
