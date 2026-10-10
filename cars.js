@@ -26,7 +26,7 @@ window.CARS = [
     images: ["C1.jpeg", "C2.jpeg", "C3.jpeg", "C4.jpeg", "C5.jpeg"], delivery: true, active: true, booked: []
   },
   {
-    id: "kia", name: "Kia K4", year: 20226, type: "SUV", city: "",
+    id: "kia", name: "Kia K4", year: 2026, type: "SUV", city: "",
     price_per_day: 50, seats: 5, transmission: "Automatic", fuel: "Gas",
     features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
     images: ["K1.jpeg","K2.jpeg", "K3.jpeg","K4.jpeg","K5.jpeg","K6.jpeg","K7.jpeg",], delivery: false, active: true, booked: []
