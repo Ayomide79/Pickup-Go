@@ -86,6 +86,6 @@ window.POLICY = "Free cancellation up to 24 hours before pickup. Contact the own
 
 /* Phone numbers and emails (same as Loco for now; replace with yours) */
 window.CONTACT = {
-  emails: ["mattewgross85@gmail.com", "alexander22gate@gmail.com"],
+  emails: ["samstonee736@gmail.com"],
   phones: ["+1 502-325-6460", ""]
 };
