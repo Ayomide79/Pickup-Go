@@ -43,6 +43,12 @@ window.CARS = [
     features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
     images: ["M1.jpeg", "M2.jpeg", "M3.jpeg", "M4.jpeg", "M5.jpeg", "M6.jpeg", "M7.jpeg", "M8.jpeg",], delivery: true, active: true, booked: []
   },
+   {
+    id: "kiason", name: "Kia Sorento", year: 2026, type: "SUV", city: "",
+    price_per_day: 60, seats: 7, transmission: "Automatic", fuel: "Gas",
+    features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
+    images: ["S1.jpeg","S2.jpeg", "S3.jpeg","S4.jpeg","S5.jpeg","S6.jpeg","S7.jpeg", "S8.jpeg"], delivery: false, active: true, booked: []
+  },
 ];
 
 /* REVIEWS: only add REAL reviews from real customers (with their permission).
