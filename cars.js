@@ -8,11 +8,11 @@
    The 4 cars below are SAMPLES with drawings. Replace names, prices and photos with your real cars. */
 window.CARS = [
   {
-    id: "economy-sedan", name: "Economy Sedan", year: 2021, type: "Car", city: "Your City",
-    price_per_day: 55, seats: 5, transmission: "Automatic", fuel: "Gas",
+    id: "economy-sedan", name: "Audi A5", year: 2019 Premium, type: "Car", city: "Orlando",
+    price_per_day: 45, seats: 5, transmission: "Automatic", fuel: "Gas (Premium)",
     features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
     description: "Comfortable, fuel-efficient sedan. Clean and easy to drive. Great for city trips and daily use.",
-    images: ["car-economy-sedan.svg"], delivery: true, active: true, booked: []
+    images: ["A1.jpeg", "A2.jpeg", "A3.jpeg", "A4.jpeg", "A5.jpeg", "A6.jpeg", "A7.jpeg", "A8.jpeg", "A9.jpeg"], delivery: true, active: true, booked: []
   },
   {
     id: "family-suv", name: "Family SUV", year: 2022, type: "SUV", city: "Your City",
