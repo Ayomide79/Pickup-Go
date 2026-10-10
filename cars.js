@@ -36,7 +36,13 @@ window.CARS = [
     price_per_day: 40, seats: 6, transmission: "Automatic", fuel: "Gas",
     features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
     images: ["F1.jpeg", "F2.jpeg", "F3.jpeg", "F4.jpeg", "F5.jpeg", "F6.jpeg", "F7.jpeg",], delivery: false, active: true, booked: []
-  }
+  },
+   {
+    id: "mazda", name: "Mazda CX-5", year: 2022, type: "Car", city: "",
+    price_per_day: 45, seats: 5, transmission: "Automatic", fuel: "Gas (Premium)",
+    features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
+    images: ["M1.jpeg", "M2.jpeg", "M3.jpeg", "M4.jpeg", "M5.jpeg", "M6.jpeg", "M7.jpeg", "M8.jpeg",], delivery: true, active: true, booked: []
+  },
 ];
 
 /* REVIEWS: only add REAL reviews from real customers (with their permission).
@@ -55,7 +61,8 @@ window.REVIEWS = {
    "kia": [ {name: "Becky B.", date: "Jun 30, 2026", rating: 4.95, text: "Car was in great condition and hosts were super informative! Would rent again."}
           ],
    "fordex": [ { name: "Racheal G.", date: "Sept 10, 2026", rating: 5, text: "Best ride."}
-             ]
+             ],
+   
 };
 
 /* Booking requests are emailed to you by Formspree (free). Paste your form link: "https://formspree.io/f/abcd1234" */
