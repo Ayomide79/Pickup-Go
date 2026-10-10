@@ -26,6 +26,12 @@ window.CARS = [
     images: ["C1.jpeg", "C2.jpeg", "C3.jpeg", "C4.jpeg", "C5.jpeg"], delivery: true, active: true, booked: []
   },
   {
+    id: "kia", name: "Kia K4", year: 20226, type: "SUV", city: "",
+    price_per_day: 50, seats: 5, transmission: "Automatic", fuel: "Gas",
+    features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
+    images: ["K1.jpeg","K2.jpeg", "K3.jpeg","K4.jpeg","K5.jpeg","K6.jpeg","K7.jpeg",], delivery: false, active: true, booked: []
+  },
+  {
     id: "sport-coupe", name: "Sport Coupe", year: 2021, type: "Luxury", city: "Your City",
     price_per_day: 140, seats: 4, transmission: "Automatic", fuel: "Gas",
     features: ["Leather se", "Premium sound", "Sunroof", "Bluetooth"],
@@ -46,6 +52,8 @@ window.REVIEWS = {
               { name: "Andrew P.", date: "Sept 25, 2026", rating: 5, text: "Great car. Rides nice and good on gas. Host was great with responding also.",},
               { name: "Mariam K.", date: " Sept 5, 2026", rating: 5, text: "Host was AWESOME and car is AWESOME!!! I was able to extend with no problem.",}
             ],
+   "kia": [ {name: "Becky B.", date: "Jun 30, 2026", rating: 4.95, text: "Car was in great condition and hosts were super informative! Would rent again."}
+          ],
 };
 
 /* Booking requests are emailed to you by Formspree (free). Paste your form link: "https://formspree.io/f/abcd1234" */
