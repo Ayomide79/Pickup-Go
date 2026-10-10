@@ -40,7 +40,7 @@ window.REVIEWS = {
    "audia5": [ { name: "Jordan M.", date: "Jun 2026", rating: 5, text: "Clean car, easy pickup." },
                { name : "Kate S.", date: "Aug 2026", rating: 5, text: "Great car and easy ride." }
              ],
-   "teslamy"; [ { name: "Samuel T.", date: "Mar 2026", rating: 4.5, text: "Pleasurable car."}
+   "teslamy": [ { name: "Samuel T.", date: "Mar 2026", rating: 4.5, text: "Pleasurable car."}
               ]
 };
 
