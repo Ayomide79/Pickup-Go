@@ -80,7 +80,7 @@ window.REVIEWS = {
 };
 
 /* Booking requests are emailed to you by Formspree (free). Paste your form link: "https://formspree.io/f/abcd1234" */
-window.FORM_ENDPOINT = "";
+window.FORM_ENDPOINT = "https://formspree.io/f/myekjdzo";
 
 window.POLICY = "Free cancellation up to 24 hours before pickup. Contact the owner to change or cancel a trip.";
 
