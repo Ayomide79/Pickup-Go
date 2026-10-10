@@ -49,6 +49,12 @@ window.CARS = [
     features: ["Blind spot warning", "Brake assist", "Bluetooth", "Backup camera", "Lane departure warning",],
     images: ["S1.jpeg","S2.jpeg", "S3.jpeg","S4.jpeg","S5.jpeg","S6.jpeg","S7.jpeg", "S8.jpeg"], delivery: false, active: true, booked: []
   },
+   {
+    id: "hyund", name: "Hyundai Tucson SE", year: 2026, type: "Car", city: "",
+    price_per_day: 45, seats: 5, transmission: "Automatic", fuel: "Gas (Premium)",
+    features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
+    images: ["H1.jpeg", "H2.jpeg", "H3.jpeg", "H4.jpeg", "H5.jpeg", "H6.jpeg", ], delivery: true, active: true, booked: []
+  },
 ];
 
 /* REVIEWS: only add REAL reviews from real customers (with their permission).
@@ -67,6 +73,8 @@ window.REVIEWS = {
    "kia": [ {name: "Becky B.", date: "Jun 30, 2026", rating: 4.95, text: "Car was in great condition and hosts were super informative! Would rent again."}
           ],
    "fordex": [ { name: "Racheal G.", date: "Sept 10, 2026", rating: 5, text: "Best ride."}
+             ],
+   "hyund":[ { name: "Sam B.", date: "Oct 10, 2026", rating: 5, text: "Smooth and steady."}
              ],
    
 };
