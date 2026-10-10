@@ -8,7 +8,7 @@
    The 4 cars below are SAMPLES with drawings. Replace names, prices and photos with your real cars. */
 window.CARS = [
   {
-    id: "economy-sedan", name: "Audi A5", year: 2019, type: "Car", city: "Orlando",
+    id: "audia5", name: "Audi A5", year: 2019, type: "Car", city: "Orlando",
     price_per_day: 45, seats: 5, transmission: "Automatic", fuel: "Gas (Premium)",
     features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
     description: "Comfortable, fuel-efficient sedan. Clean and easy to drive. Great for city trips and daily use.",
@@ -41,7 +41,7 @@ window.CARS = [
    Cars with no reviews show "New listing". Example (remove the // to use):
    "economy-sedan": [ { name: "Jordan M.", date: "Nov 2026", rating: 5, text: "Clean car, easy pickup." } ],  */
 window.REVIEWS = {
-   "economy-sedan": [ { name: "Jordan M.", date: "Aug 2026", rating: 5, text: "Clean car, easy pickup." } ],
+   "audia5": [ { name: "Jordan M.", date: "Aug 2026", rating: 5, text: "Clean car, easy pickup." } ],
 };
 
 /* Booking requests are emailed to you by Formspree (free). Paste your form link: "https://formspree.io/f/abcd1234" */
