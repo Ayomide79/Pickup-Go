@@ -81,7 +81,7 @@
         if (i >= 0) v.splice(i, 1); else v.push(c.id);
         setFavs(v); render();
       };
-      var rateEl = r ? el("div", { "class": "rate" }, [el("i", { text: "★ " }), document.createTextNode(r.avg.toFixed(1) + " (" + r.n + ")")]) : el("span", { "class": "new", text: "New listing" });
+      var rateEl = r ? el("div", { "class": "rate" }, [el("i", { text: "★ " }), document.createTextNode(r.avg.toFixed(1))]) : el("span", { "class": "new", text: "New listing" });
       var link = el("a", { "class": "cl", href: "car.html?id=" + encodeURIComponent(c.id) + qs() }, [
         el("img", { "class": "ph", src: c.images[0] || "placeholder.svg", alt: carTitle(c), loading: "lazy" }),
         el("div", { "class": "bd" }, [
@@ -151,7 +151,7 @@
       box.appendChild(el("div", { "class": "hero-img" }, [heroImg, heart, vb]));
 
       // Title + quick facts
-      var ratingEl = r ? el("span", {}, [el("strong", { text: r.avg.toFixed(1) + " " }), el("span", { "class": "rate" }, [el("i", { text: "★" })]), document.createTextNode(" (" + r.n + (r.n > 1 ? " reviews)" : " review)"))]) : el("span", { "class": "new", text: "New listing" });
+      var ratingEl = r ? el("span", {}, [el("strong", { text: r.avg.toFixed(1) + " " }), el("span", { "class": "rate" }, [el("i", { text: "★" })]), document.createTextNode("")]) : el("span", { "class": "new", text: "New listing" });
       var sub = el("div", { "class": "meta", style: "font-size:1rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center" }, [document.createTextNode(car.year + (car.trim ? " " + car.trim : "")), document.createTextNode("·"), ratingEl]);
       if (car.host && car.host.badge) { sub.appendChild(document.createTextNode("·")); sub.appendChild(el("span", { "class": "new", text: car.host.badge })); }
       box.appendChild(el("h1", { style: "font-size:2rem;margin:16px 0 4px", text: car.name }));
@@ -211,7 +211,7 @@
       var rv = [];
       if (!r) rv.push(el("p", { style: "margin:0", text: "No reviews yet. Rent this car and be the first to review it." }));
       else {
-        rv.push(el("div", { style: "font-size:2.2rem;font-weight:800" }, [document.createTextNode(r.avg.toFixed(1) + " "), el("span", { "class": "rate" }, [el("i", { text: "★" })]), el("span", { "class": "meta", style: "font-size:1rem;font-weight:500", text: "  " + r.n + (r.n > 1 ? " ratings" : " rating") })]));
+        rv.push(el("div", { style: "font-size:2.2rem;font-weight:800" }, [document.createTextNode(r.avg.toFixed(1) + " "), el("span", { "class": "rate" }, [el("i", { text: "★" })]), document.createTextNode("")]));
         ["Cleanliness", "Maintenance", "Communication", "Convenience", "Accuracy"].forEach(function (k) {
           var vals = r.list.filter(function (x) { return x.cats && typeof x.cats[k] === "number"; }).map(function (x) { return x.cats[k]; });
           if (!vals.length) return;
