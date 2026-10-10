@@ -8,7 +8,7 @@
    The 4 cars below are SAMPLES with drawings. Replace names, prices and photos with your real cars. */
 window.CARS = [
   {
-    id: "economy-sedan", name: "Audi A5", year: 2019 Premium, type: "Car", city: "Orlando",
+    id: "economy-sedan", name: "Audi A5", year: 2019, type: "Car", city: "Orlando",
     price_per_day: 45, seats: 5, transmission: "Automatic", fuel: "Gas (Premium)",
     features: ["Bluetooth", "Backup camera", "USB charging", "Air conditioning"],
     description: "Comfortable, fuel-efficient sedan. Clean and easy to drive. Great for city trips and daily use.",
