@@ -54,7 +54,8 @@
   var grid = $("#car-grid");
   if (grid) {
     var type = "All", sortBy = "rec";
-    var qWhere = $("#q-where"), qFrom = $("#q-from"), qUntil = $("#q-until");
+    var mk = function (id) { return $(id) || document.createElement("input"); };
+    var qWhere = mk("#q-where"), qFrom = mk("#q-from"), qUntil = mk("#q-until");
     qWhere.value = P.get("where") || ""; qFrom.value = P.get("from") || ""; qUntil.value = P.get("until") || "";
     var types = ["All"]; cars().forEach(function (c) { if (types.indexOf(c.type) < 0) types.push(c.type); }); types.push("Saved ♥");
     var chips = $("#chips");
@@ -64,7 +65,7 @@
       chips.appendChild(b);
     });
     $("#sort").onchange = function () { sortBy = this.value; render(); };
-    $("#search-form").onsubmit = function (e) { e.preventDefault(); render(); document.getElementById("cars").scrollIntoView(); };
+    var sf = $("#search-form"); if (sf) sf.onsubmit = function (e) { e.preventDefault(); render(); document.getElementById("cars").scrollIntoView(); };
 
     function qs() {
       var p = new URLSearchParams();

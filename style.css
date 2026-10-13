@@ -115,3 +115,12 @@ input[type=datetime-local]{display:block;width:100%;min-width:0;min-height:46px;
   .hero-img>img{aspect-ratio:16/10}
 }
 @media(max-width:959px){.cd{max-width:760px;margin:0 auto}}
+
+/* ===== hero trust points ===== */
+.trust{display:grid;gap:10px;grid-template-columns:1fr;margin:0 0 24px;position:relative;z-index:1}
+.trust-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:13px 16px 13px 44px;position:relative}
+.trust-item:before{content:"\2713";position:absolute;left:14px;top:13px;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.trust-item b{display:block;color:#fff}.trust-item span{color:#C5D3EA;font-size:.92rem}
+.hero .btn{position:relative;z-index:1}
+@media(min-width:640px){.trust{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.trust{grid-template-columns:repeat(4,1fr)}}

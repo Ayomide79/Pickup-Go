@@ -2,11 +2,13 @@
 <header class="site-h" id="site-header"></header>
 <main>
 <section class="hero"><div class="wrap"><h1>Rent a car.<br><span>Pickup &amp; Go.</span></h1><p>Pick the exact car you want, choose your dates, and send a request in two minutes.</p>
-<form class="search" id="search-form" role="search">
-<label>Where<input id="q-where" placeholder="City, area, or car type" autocomplete="off"></label>
-<label>From<input id="q-from" type="datetime-local"></label>
-<label>Until<input id="q-until" type="datetime-local"></label>
-<button class="btn" type="submit">Search</button></form></div></section>
+<div class="trust">
+<div class="trust-item"><b>Owner-direct</b><span>Deal with the owner, not a call center.</span></div>
+<div class="trust-item"><b>Clear pricing</b><span>See your estimated total before you send a request.</span></div>
+<div class="trust-item"><b>Pickup or delivery</b><span>Choose pickup, or ask for delivery where offered.</span></div>
+<div class="trust-item"><b>Fast replies</b><span>Reach us by phone or email.</span></div>
+</div>
+<a class="btn" href="#site-footer">Contact us</a></div></section>
 <section class="pad wrap" id="cars"><div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
 <div class="bar"><strong id="count"></strong><label class="meta">Sort <select id="sort"><option value="rec">Recommended</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="top">Top rated</option></select></label></div>
 <div class="grid" id="car-grid"></div></section>
